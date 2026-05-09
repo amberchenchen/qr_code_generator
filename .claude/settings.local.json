@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\Amber\\\\source\\\\repos\\\\SystemDesign\\\\qr_code_generator\\\\services\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\Amber\\\\source\\\\repos\\\\SystemDesign\\\\qr_code_generator\\\\routers\" -Force)",
+      "PowerShell(python --version)",
+      "PowerShell(pip --version)",
+      "PowerShell(pip install greenlet --only-binary=:all: 2>&1)",
+      "PowerShell(Start-Process \"http://localhost:8000/docs\")",
+      "PowerShell(Get-Process -Name python -ErrorAction SilentlyContinue | Where-Object { $_.Id -eq 9688 } | Stop-Process -Force; Start-Sleep -Seconds 1; cd \"c:\\\\Users\\\\Amber\\\\source\\\\repos\\\\SystemDesign\\\\qr_code_generator\"; Start-Process -NoNewWindow -FilePath \"python\" -ArgumentList \"-m uvicorn main:app --host 0.0.0.0 --port 8000 --reload\" -RedirectStandardOutput \"server.log\" -RedirectStandardError \"server_err.log\"; Start-Sleep -Seconds 2; Get-Content \"server_err.log\" -ErrorAction SilentlyContinue | Select-Object -Last 5)",
+      "PowerShell(Get-Process -Name python -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)"
+    ]
+  }
+}
